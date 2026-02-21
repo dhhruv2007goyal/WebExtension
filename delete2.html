@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gesture Sidebar</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <style>
+    body {
+        background-color: #ffffff;
+        padding: 10px;
+    }
+    #vid{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Fills the container without stretching */
+        transform: scaleX(-1); /* Mirrors the feed */
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+  </style>
+</head>
+<body>
+    
+    <video id="vid" autoplay muted></video>
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Zooming in</div>
+        </div>
+                <button type="button" class="btn btn-primary" id="liveToastBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+        </button>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              
+              <strong class="me-auto">Deleting gesture</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Are you sure you want to delete the "Zooming in" gesture?
+            </div>
+            <button type="button" class="btn-confirm px-3 py-1" data-bs-dismiss="toast" aria-label="Yes">Yes</button>
+          </div>
+        </div>
+
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Zooming out</div>
+        </div>
+        <button type="button" class="btn btn-primary" id="liveToast2Btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z"/>
+                <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4zM2.5 3h11V2h-11z"/>
+            </svg>
+        </button>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div id="liveToast2" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              
+              <strong class="me-auto">Deleting gesture</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Are you sure you want to delete the "Zooming out" gesture?
+            </div>
+            <button type="button" class="btn-confirm px-3 py-1" data-bs-dismiss="toast" aria-label="Yes">Yes</button>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <a class="button" href="mypage.html" style="width: 200px">Back</a>
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="mypage.js"></script> 
+</body>
+</html>

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+best_model.keras
+dataset/
+dataset.rar
+bootstrap.min.css
+bootstrap.bundle.min.js
+
+./.venv/
+tf_env/
