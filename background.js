@@ -1,22 +1,22 @@
-async function shiftTab(d) {
-    const tabs = await chrome.tabs.query({ lastFocusedWindow: true });
-    const current = tabs.find(tab => tab.active);
+// async function shiftTab(d) {
+//     const tabs = await chrome.tabs.query({ lastFocusedWindow: true });
+//     const current = tabs.find(tab => tab.active);
 
-    if (!current) {
-        console.warn("No active tab found");
-        return;
-    }
+//     if (!current) {
+//         console.warn("No active tab found");
+//         return;
+//     }
 
-    const indx = current.index;
-    let next;
-    if (d === 'right') {
-        next = (indx + 1) % tabs.length;
-    } else {
-        next = (indx - 1 + tabs.length) % tabs.length;
-    }
+//     const indx = current.index;
+//     let next;
+//     if (d === 'right') {
+//         next = (indx + 1) % tabs.length;
+//     } else {
+//         next = (indx - 1 + tabs.length) % tabs.length;
+//     }
 
-    await chrome.tabs.update(tabs[next].id, { active: true });
-}
+//     await chrome.tabs.update(tabs[next].id, { active: true });
+// }
 
 async function zoom(d) {
     const tabs = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
@@ -72,30 +72,30 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     console.log("Message received in background.js:", request.command);
 
     switch (request.command) {
-        case "scroll down":
+        case "down":
             scroll('down');
             break;
-        case "scroll up":
+        case "up":
             scroll('up');
             break;
-        case "scroll left":
+        case "left":
             scroll('left');
             break;
-        case "scroll right":
+        case "right":
             scroll('right');
             break;
-        case "zoom in":
+        case "fist":
             zoom('in');
             break;
-        case "zoom out":
+        case "palm":
             zoom('out');
             break;
-        case "tab left":
-            shiftTab("left");
-            break;
-        case "tab right":
-            shiftTab("right");
-            break;
+        // case "tab left":
+        //     shiftTab("left");
+        //     break;
+        // case "tab right":
+        //     shiftTab("right");
+        //     break;
         default:
             console.warn("Unknown command received:", request.command);
     }
