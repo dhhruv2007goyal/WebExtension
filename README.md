@@ -1,6 +1,4 @@
-Dataset used (HaGRID dataset subset)
-https://drive.google.com/drive/folders/1Q93yJ2Gk6fq_5lQm9sm5cvom-GBj-xXf?usp=drive_link
+Dataset used (custom)
+https://drive.google.com/drive/folders/10iNMK1tp6xuYvEHNkMWqeVfrRGfDfGjF?usp=sharing
 
-Editing/Deletion of gestures remaining
-
-Accuracy of model is too low
+See gitignore for js and css scripts
