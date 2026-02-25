@@ -73,7 +73,7 @@ async function pass() {
 
         const result = await pred.json();
 
-        if (result.confidence > 90) {
+        if (result.confidence > 80) {
             detect(result.gesture);
         }
 

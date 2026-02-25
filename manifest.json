@@ -23,16 +23,7 @@
         "http://localhost:5000/*",
         "<all_urls>"
     ],
-
-
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["scroller.js"],
-      "run_at": "document_idle"
-    }
-  ],
-
+    
   "side_panel": {
     "default_title": "Gesture Monitor",
     "default_path": "mypage.html"

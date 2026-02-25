@@ -5,7 +5,6 @@ import numpy as np
 import base64
 from PIL import Image
 import io
-from keras.applications.mobilenet_v2 import preprocess_input
 import os
 import shutil
 import base64
@@ -24,10 +23,11 @@ def predict():
     base64_image = data['image']
     img_bytes = base64.b64decode(base64_image)
     img = Image.open(io.BytesIO(img_bytes)).convert('RGB')
+    img = img.transpose(Image.FLIP_LEFT_RIGHT)
     img = img.resize((128, 128))
     img_array = np.array(img, dtype=np.float32)
     img_array = np.expand_dims(img_array, axis=0)
-    img_array = preprocess_input(img_array)
+    img_array = img_array / 255.0  
     p = model.predict(img_array, verbose=0)
     ind = np.argmax(p)
     predicted_cls = clses[ind]

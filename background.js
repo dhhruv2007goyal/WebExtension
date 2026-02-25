@@ -57,10 +57,10 @@ async function scroll(d) {
                     window.scrollBy({ top: 200, behavior: 'smooth' });
                     break;
                 case 'left':
-                    window.scrollBy({ left: -200, behavior: 'smooth' });
+                    window.scrollBy({ left: -50, behavior: 'smooth' });
                     break;
                 case 'right':
-                    window.scrollBy({ left: 200, behavior: 'smooth' });
+                    window.scrollBy({ left: 50, behavior: 'smooth' });
                     break;
             }
         },
